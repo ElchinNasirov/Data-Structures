@@ -148,36 +148,36 @@ class LinkedList:
         self.length = self.length - 1
         return target.value
 
-class Stack:
-    def __init__(self):
-        self.size = 0
-        self.storage = LinkedList()
-
-    def __len__(self):
-        return len(self.storage)
-
-    def push(self, value):
-        self.storage.add_to_head(value)
-
-    def pop(self):
-        if len(self.storage) == 0:
-            return None
-        return self.storage.remove_head()
-
-
 # class Stack:
 #     def __init__(self):
 #         self.size = 0
-#         self.head = None
-#         self.storage = []
+#         self.storage = LinkedList()
 
 #     def __len__(self):
 #         return len(self.storage)
 
 #     def push(self, value):
-#         self.storage.append(value)
+#         self.storage.add_to_head(value)
 
 #     def pop(self):
 #         if len(self.storage) == 0:
 #             return None
-#         return self.storage.pop()
+#         return self.storage.remove_head()
+
+
+class Stack:
+    def __init__(self):
+        self.size = 0
+        self.head = None
+        self.storage = []
+
+    def __len__(self):
+        return len(self.storage)
+
+    def push(self, value):
+        self.storage.append(value)
+
+    def pop(self):
+        if len(self.storage) == 0:
+            return None
+        return self.storage.pop()
